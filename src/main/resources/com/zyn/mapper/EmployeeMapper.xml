@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyn.mapper.EmployeeMapper">
+    <!--接口的路径-->
+    <select id="getEmployeeList" resultType="Employee">
+        select * from t_emp
+    </select>
+
+    <!--int addEmployee(Employee employee);-->
+    <insert id="addEmployee" parameterType="Employee">
+        insert into t_emp values (null,#{empName},#{age},#{sex},#{email});
+    </insert>
+    <!--int deletEmployee(Integer id);-->
+    <delete id="deletEmployee">
+        delete  from t_emp where emp_id=#{id}
+    </delete>
+
+    <!--Employee getEmployeeToId(@Param("id") Integer id);-->
+    <select id="getEmployeeToId" resultType="Employee">
+        select * from t_emp where emp_id=#{id}
+    </select>
+
+    <!--void updateEmployee(Employee emp);-->
+    <update id="updateEmployee">
+        update t_emp set emp_name=#{empName},age=#{age},sex=#{sex} Where emp_id=#{empId}
+    </update>
+</mapper>

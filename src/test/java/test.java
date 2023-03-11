@@ -41,7 +41,7 @@ public class test {
         INSTANCE;
 
         public void sayHello(){
-            System.out.println("hello enum");
+            System.out.println("hello en000um");
         }
     }
 }
